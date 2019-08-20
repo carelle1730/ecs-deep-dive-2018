@@ -15,8 +15,8 @@ const AWS = require('aws-sdk');
 
 const generateBucketName = name => `s3-photos-${process.env.STAGE}-${name}`;
 
-const assertBucket = s3 => (bucketName) => {
-  const Bucket = generateBucketName(bucketName);
+const assertBucket = s3 => (thewebsite) => {
+  const Bucket = generateBucketName(thewebsite);
   return s3.createBucket({ Bucket }).promise();
 };
 
